@@ -1,9 +1,13 @@
 import './MoviesCard.css'
 
 
-const MoviesCard = () => {
+const MoviesCard = (props) => {
   return (
-    <p>hi from movies card</p>
+    <div className="movies-card">
+      <h4>{props.title}</h4>
+      <img className="movies-poster-img" src={props.poster}></img>
+      <p>{props.rating.toFixed(1)}</p>
+    </div>
   )
 }
 

@@ -1,17 +1,26 @@
 import MoviesCard from "../MoviesCard/MoviesCard"
 import './MoviesContainer.css'
 
-const MoviesContainer = () => {
+const MoviesContainer = (props) => {
+  //map over movieData.movies
+  //pluck out values to use as props
+  console.log(props.movies)
+  const moviesCards = props.movies.map((movie)=> {
+    return (
+      <MoviesCard 
+        title={movie.title}
+        rating={movie.average_rating}
+        poster={movie.poster_path}
+        id={movie.id}
+        key={movie.id}
+      />
+    )
+  })
   return (
     <div className="movie-grid">      
-      <MoviesCard/>
-      <MoviesCard/>
-      <MoviesCard/>
-      <MoviesCard/>
-      <MoviesCard/>
-      <MoviesCard/>
-      <MoviesCard/>
+      {moviesCards}
     </div>
   )
 }
+
 export default MoviesContainer
