@@ -1,0 +1,16 @@
+.sel-movie-backdrop-img {
+  width: 900px;
+}
+
+.sel-movie-poster-img {
+  width: 300px
+}
+
+.sel-movie-detail-section {
+  display: flex;
+}
+
+.sel-movie-card {
+  align-items: center;
+  margin: auto
+}

@@ -13,6 +13,7 @@ const MoviesContainer = (props) => {
         poster={movie.poster_path}
         id={movie.id}
         key={movie.id}
+        onClick={() => props.onMovieCardClick(movie.id)}
       />
     )
   })
