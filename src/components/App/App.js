@@ -8,22 +8,33 @@ import './App.css'
 
 const App = () => {
   const [movies, setMovies] = useState([])
-  // console.log('movieData', movieData)
   const [selectedMovie, setSelectedMovie] = useState('')
-  // https://rancid-tomatillos.herokuapp.com/api/v2/movies
+  const [error, setError] = useState('')
+  
 
   const getAllMovies = () => {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`)
+      }
+      return response.json()
+    })
     .then(data => setMovies(data.movies))
-    .catch(error => console.log(error.message))
+    .catch(error => setError(error.message))
   }
 
   const getSingleMovie = (movieId) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`)
+      }
+      return response.json()
+    })
     .then(data => setSelectedMovie(data.movie))
-    .catch(error => console.log(error.message))
+    .catch(error => setError(error.message))
   }
 
   useEffect(() => {
@@ -37,6 +48,7 @@ const App = () => {
   return ( 
     <div>
       <Header/>
+      {error && <p> {error} </p>}
       {/* <h2>Hello from App</h2> */}
       {selectedMovie ? 
       <SelectedMoviesContainer selectedMovie={selectedMovie} /> 
