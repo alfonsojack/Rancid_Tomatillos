@@ -1,5 +1,6 @@
 .sel-movie-backdrop-img {
   width: 900px;
+  /* box-shadow: 0 0 8px 8px black inset; */
 }
 
 .sel-movie-poster-img {
@@ -12,5 +13,23 @@
 
 .sel-movie-card {
   align-items: center;
-  margin: auto
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  background-color: black;
+  color: white
+}
+
+.sel-movie-title {
+  font-size: 4em;
+  margin-top: 0;
+}
+
+.sel-movie-overview {
+  font-size: 1.3em
+}
+
+.sel-movie-title-section {
+  padding: 25px
 }
