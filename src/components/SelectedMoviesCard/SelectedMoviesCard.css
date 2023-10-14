@@ -17,8 +17,8 @@
   display: flex;
   flex-direction: column;
   padding: 50px;
-  background-color: black;
-  color: white
+  background-color: #2B3238;
+  color: #e9ecee
 }
 
 .sel-movie-title {
@@ -31,5 +31,25 @@
 }
 
 .sel-movie-title-section {
-  padding: 25px
+  padding: 25px;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: 2px solid #1A1E22;
+  border-right: 2px solid #1A1E22;
+}
+
+.sel-movie-tagline {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.sel-movie-details {
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
