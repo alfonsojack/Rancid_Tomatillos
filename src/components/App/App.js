@@ -10,6 +10,7 @@ const App = () => {
   const [movies, setMovies] = useState([])
   const [selectedMovie, setSelectedMovie] = useState('')
   const [error, setError] = useState('')
+  const [trailer, setTrailer] = useState(null)
   
 
   const getAllMovies = () => {
@@ -37,21 +38,46 @@ const App = () => {
     .catch(error => setError(error.message))
   }
 
+  const getMovieTrailer = (movieId) => {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}/videos`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`)
+      }
+      return response.json()
+    })
+    .then(data => {
+      const foundTrailer = data.videos.find((video)=> {return video.type === 'Trailer'});
+      if (foundTrailer) {
+      setTrailer(foundTrailer)
+      } else {
+        setTrailer('NO TRAILER FOUND')
+      }
+    }
+  )
+    .catch(error => setError(error.message))
+  }
+
   useEffect(() => {
     getAllMovies()
   }, [])
 
   const handleMovieCardClick = (movieId) => {
     getSingleMovie(movieId)
+    showMovieTrailer(movieId)
+  
   }
 
+  const showMovieTrailer = (movieId) => {
+    getMovieTrailer(movieId)
+  }
   return ( 
     <div>
       <Header/>
       {error && <p> {error} </p>}
       {/* <h2>Hello from App</h2> */}
-      {selectedMovie ? 
-      <SelectedMoviesContainer selectedMovie={selectedMovie} /> 
+      {selectedMovie && trailer ? 
+      <SelectedMoviesContainer selectedMovie={selectedMovie} trailer={trailer}/> 
       : 
       <MoviesContainer movies={movies} onMovieCardClick={handleMovieCardClick}/>}
     </div> 
