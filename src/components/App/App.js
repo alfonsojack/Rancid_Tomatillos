@@ -37,12 +37,25 @@ const App = () => {
     .catch(error => setError(error.message))
   }
 
+  const getMovieTrailer = (movieId) => {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}/videos`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`)
+      }
+      return response.json()
+    })
+    .then(data => console.log("trailers", data.videos.find((video)=> {return video.type === 'Trailer'})))
+    .catch(error => setError(error.message))
+  }
+
   useEffect(() => {
     getAllMovies()
   }, [])
 
   const handleMovieCardClick = (movieId) => {
     getSingleMovie(movieId)
+    getMovieTrailer(movieId)
   }
 
   return ( 
