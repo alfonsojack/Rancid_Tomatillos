@@ -1,11 +1,11 @@
 import './SelectedMoviesCard.css'
 
 
-const SelectedMoviesCard = ({ selectedMovie }) => {
+const SelectedMoviesCard = ({ selectedMovie, trailer }) => {
   const imgStyle = {
     backgroundImage: `url(${selectedMovie.backdrop_path})`,
   };
-
+  const trailerUrl = `https://www.youtube.com/embed/${trailer.key}?si=KM2o77Gkm7VXdn6F`
   return (
     <div className='sel-movie-card'>
       <section className='img-section' style={imgStyle}>
@@ -17,6 +17,8 @@ const SelectedMoviesCard = ({ selectedMovie }) => {
           <h2 className='sel-movie-title'>{selectedMovie.title}</h2>
           <p className='sel-movie-overview'>{selectedMovie.overview}</p>
           <p className='sel-movie-tagline'>{selectedMovie.tagline}</p>
+          {trailer.key && 
+          <iframe className='sel-movie-trailer' src={trailerUrl}></iframe>} 
         </div>
         <div className='sel-movie-details'>
           <p>Rating: {selectedMovie.average_rating} / 10</p>
