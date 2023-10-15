@@ -1,16 +1,21 @@
 .sel-movie-backdrop-img {
-  width: 900px;
+  width: 100vw;
   /* box-shadow: 0 0 8px 8px black inset; */
+  
 }
 
 .sel-movie-poster-img {
-  width: 300px
+  width: 300px;
 }
 
 .sel-movie-detail-section {
   display: flex;
 }
-
+.sel-movie-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .sel-movie-card {
   align-items: center;
   margin: auto;
@@ -20,7 +25,29 @@
   background-color: #2B3238;
   color: #e9ecee
 }
+.img-section {
+  position: relative;
+  width: 100%; /* Set the width as needed */
+  height: 800px; /* Set the height as needed */
+  background-size: cover; /* Make sure the background image covers the container */
+  background-position: center; /* Center the background image */
+}
 
+.img-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75); /* Add a semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sel-movie-tagline {
+  color: #e9ecee;
+  font-size: 40px;
+  margin-top: 10px;
+}
 .sel-movie-title {
   font-size: 4em;
   margin-top: 0;
@@ -42,14 +69,7 @@
   border-right: 2px solid #1A1E22;
 }
 
-.sel-movie-tagline {
+/* .sel-movie-tagline {
   font-size: 40px;
   margin-top: 10px;
-}
-
-.sel-movie-details {
-  font-size: 1.2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+} */
