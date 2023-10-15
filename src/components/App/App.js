@@ -10,6 +10,7 @@ const App = () => {
   const [movies, setMovies] = useState([])
   const [selectedMovie, setSelectedMovie] = useState('')
   const [error, setError] = useState('')
+  const [trailer, setTrailer] = useState(null)
   
 
   const getAllMovies = () => {
@@ -45,7 +46,15 @@ const App = () => {
       }
       return response.json()
     })
-    .then(data => console.log("trailers", data.videos.find((video)=> {return video.type === 'Trailer'})))
+    .then(data => {
+      const foundTrailer = data.videos.find((video)=> {return video.type === 'Trailer'});
+      if (foundTrailer) {
+      setTrailer(foundTrailer)
+      } else {
+        setTrailer('NO TRAILER FOUND')
+      }
+    }
+  )
     .catch(error => setError(error.message))
   }
 
@@ -55,16 +64,20 @@ const App = () => {
 
   const handleMovieCardClick = (movieId) => {
     getSingleMovie(movieId)
-    getMovieTrailer(movieId)
+    showMovieTrailer(movieId)
+  
   }
 
+  const showMovieTrailer = (movieId) => {
+    getMovieTrailer(movieId)
+  }
   return ( 
     <div>
       <Header/>
       {error && <p> {error} </p>}
       {/* <h2>Hello from App</h2> */}
-      {selectedMovie ? 
-      <SelectedMoviesContainer selectedMovie={selectedMovie} /> 
+      {selectedMovie && trailer ? 
+      <SelectedMoviesContainer selectedMovie={selectedMovie} trailer={trailer}/> 
       : 
       <MoviesContainer movies={movies} onMovieCardClick={handleMovieCardClick}/>}
     </div> 
