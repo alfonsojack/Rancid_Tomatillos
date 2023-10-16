@@ -1,0 +1,12 @@
+* {
+  margin: 0px;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #2B3238;
+  font-family: rubik;
+  color: #e9ecee;
+}
