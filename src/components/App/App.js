@@ -72,7 +72,7 @@ const App = () => {
     getMovieTrailer(movieId)
   }
   return ( 
-    <div>
+    <div className='App'>
       <Header/>
       {error && <p> {error} </p>}
       {/* <h2>Hello from App</h2> */}

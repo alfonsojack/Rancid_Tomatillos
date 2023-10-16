@@ -1,7 +1,15 @@
-h1 {
+.header-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #1A1E22;
+  height: 15vh;
+}
+
+h1 {
+  font-family: 'Monoton', sans-serif;
+  font-size: 64px;
   color: #e9ecee;
   margin: 0;
-  height: 15vh;
   text-align: center;
 }

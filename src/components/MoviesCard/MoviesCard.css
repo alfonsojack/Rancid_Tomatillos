@@ -1,10 +1,34 @@
 .movies-card {
+  font-size: 18px;
   border: 2px solid black;
-  padding: 10px;
+  /* padding: 10px; */
+  box-shadow: none;
+  width: 100%;
+}
 
+.movies-card:hover {
+  cursor: pointer;
+  transition-duration: .2s;
+  transform: scale(1.025);
+  box-shadow: 0 0 5px #e9ecee,
+              0 0 10px #e9ecee,
+              0 0 15px #e9ecee,
+              0 0 20px #e9ecee;
 }
 
 .movies-poster-img {
-  border: 2px solid black;
-  height: 300px
+  /* border: 2px solid black; */
+  width: 100%;
+  /* height: 100%; */
+  box-shadow: none;
+}
+
+.card-bars {
+  background-color: #56636F;
+  height: 50px;
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
