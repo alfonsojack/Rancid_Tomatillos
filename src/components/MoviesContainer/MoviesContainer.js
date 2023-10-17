@@ -1,4 +1,5 @@
 import MoviesCard from "../MoviesCard/MoviesCard"
+import PropTypes from 'prop-types'
 import './MoviesContainer.css'
 
 const MoviesContainer = (props) => {
@@ -25,3 +26,15 @@ const MoviesContainer = (props) => {
 }
 
 export default MoviesContainer
+
+MoviesContainer.propTypes= {
+  movies: PropTypes.arrayOf(PropTypes.shape({
+    average_rating: PropTypes.number.isRequired,
+    backdrop_path: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  })),
+  onMovieCardClick: PropTypes.func
+}
