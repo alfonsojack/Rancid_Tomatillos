@@ -1,15 +1,18 @@
 .sel-movie-backdrop-img {
   width: 100vw;
+  
 }
+
 .sel-movie-poster-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  padding-top: 40px
 }
 
 .sel-movie-poster-img {
-  height: 300px;
+  height: 400px;
 }
 
 .sel-movie-detail-section {
@@ -19,6 +22,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 1.2em;
 }
 .sel-movie-card {
   align-items: center;
@@ -42,6 +46,10 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 5px #1A1E22,
+  0 0 10px #1A1E22,
+  0 0 15px #1A1E22,
+  0 0 20px #1A1E22;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,8 +57,9 @@
 
 .sel-movie-tagline {
   color: #e9ecee;
-  font-size: 40px;
-  margin-top: 10px;
+  font-size: 2em;
+  font-style: italic;
+  margin-top: 30px;
 }
 .sel-movie-title {
   font-size: 4em;
@@ -58,7 +67,9 @@
 }
 
 .sel-movie-overview {
-  font-size: 1.3em
+  font-size: 1.3em;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .sel-movie-title-section {
@@ -69,11 +80,21 @@
   align-items: center;
   margin-left: 20px;
   margin-right: 20px;
-  border-left: 2px solid #1A1E22;
-  border-right: 2px solid #1A1E22;
+  border-left: 2px solid #e9ecee;
+  border-right: 2px solid #e9ecee;
 }
 
 .sel-movie-trailer {
   width: 400px;
   height: 250px;
+}
+.movie-det-title-line {
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.movie-det-line {
+  margin-bottom: 20px;
+  padding-right: 20px
 }

@@ -1,19 +1,36 @@
+
 .movies-card {
-  font-size: 18px;
-  border: 2px solid black;
+  font-size: .95em;
+  font-style: kubik;
+  /* border: 2px solid ; */
   /* padding: 10px; */
-  box-shadow: none;
+  box-shadow: 0 0 5px #1A1E22,
+  0 0 10px #1A1E22,
+  0 0 15px #1A1E22,
+  0 0 20px #1A1E22;
+;
   width: 100%;
+  height: 100%;
 }
 
 .movies-card:hover {
   cursor: pointer;
+  /* border: 2px solid #e9e9e9 */
   transition-duration: .2s;
   transform: scale(1.025);
   box-shadow: 0 0 5px #e9ecee,
               0 0 10px #e9ecee,
               0 0 15px #e9ecee,
               0 0 20px #e9ecee;
+}
+
+.movies-card:active {
+  transition-duration: .2s;
+  transform: scale(1.055);
+  box-shadow: 0 0 5px #1A1E22,
+              0 0 10px #1A1E22,
+              0 0 15px #1A1E22,
+              0 0 20px #1A1E22;
 }
 
 .movies-poster-img {
@@ -31,4 +48,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -5px
 }
