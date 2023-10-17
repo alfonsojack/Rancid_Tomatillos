@@ -1,6 +1,6 @@
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
   /* border: 2px solid black; */
   margin: 20px;
