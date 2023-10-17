@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import './MoviesCard.css'
 
 
@@ -16,3 +17,9 @@ const MoviesCard = (props) => {
 }
 
 export default MoviesCard
+
+MoviesCard.propTypes= {
+  title: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired
+}
