@@ -4,7 +4,7 @@ import './MoviesCard.css'
 
 const MoviesCard = (props) => {
   return (
-    <div className="movies-card" onClick={props.onClick}>
+    <div className="movies-card">
       <div className='card-bars'>
         <h4>{props.title}</h4>
       </div>
