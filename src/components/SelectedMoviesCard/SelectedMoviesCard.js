@@ -3,6 +3,7 @@ import './SelectedMoviesCard.css'
 
 
 const SelectedMoviesCard = ({ selectedMovie, trailer }) => {
+  console.log(selectedMovie)
   const imgStyle = {
     backgroundImage: `url(${selectedMovie.backdrop_path})`,
   };

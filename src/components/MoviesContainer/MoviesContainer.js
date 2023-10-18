@@ -1,21 +1,25 @@
 import MoviesCard from "../MoviesCard/MoviesCard"
 import PropTypes from 'prop-types'
 import './MoviesContainer.css'
+import { Link } from 'react-router-dom'
 
 const MoviesContainer = (props) => {
   //map over movieData.movies
   //pluck out values to use as props
   console.log(props.movies)
+  // const specificMovie = useParams().movies
   const moviesCards = props.movies.map((movie)=> {
     return (
-      <MoviesCard 
-        title={movie.title}
-        rating={movie.average_rating}
-        poster={movie.poster_path}
-        id={movie.id}
-        key={movie.id}
-        onClick={() => props.onMovieCardClick(movie.id)}
-      />
+      <Link to={`/movies/${movie.id}`}>
+        <MoviesCard 
+          title={movie.title}
+          rating={movie.average_rating}
+          poster={movie.poster_path}
+          id={movie.id}
+          key={movie.id}
+          // onClick={() => props.onMovieCardClick(movie.id)}
+        />
+      </Link>
     )
   })
   return (
