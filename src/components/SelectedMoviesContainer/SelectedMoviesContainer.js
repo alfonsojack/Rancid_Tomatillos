@@ -1,19 +1,45 @@
+import React, { useState, useEffect } from 'react'
 import SelectedMoviesCard from '../SelectedMoviesCard/SelectedMoviesCard'
 import PropTypes from 'prop-types'
 import './SelectedMoviesContainer.css'
+import { useParams } from 'react-router-dom'
+import { getSingleMovie, getMovieTrailer } from '../../apiCalls'
 
-const SelectedMoviesContainer = ({ selectedMovie, trailer}) => {
-  //map over movieData.movies
-  //pluck out values to use as props
-  // const selectedMoviesCard = selectedMovie
+const SelectedMoviesContainer = () => {
+  const [selectedMovie, setSelectedMovie] = useState(null)
+  const [trailer, setTrailer] = useState(null)
+  const { id } = useParams()
+
+  useEffect(() => {
+    getSingleMovie(id)
+    .then(data => setSelectedMovie(data.movie))
+    .catch(error => console.error(error)) 
+  
+    getMovieTrailer(id)
+    .then(data => {
+      const foundTrailer = data.videos.find((video) => { return video.type === 'Trailer' });
+      if (foundTrailer) {
+        setTrailer(foundTrailer)
+      } else {
+        setTrailer('NO TRAILER FOUND')
+      }
+    })
+    .catch(error => console.error(error))
+  }, [id]);
+
   return (
-    <div className="selected -movie-grid">      
-      <SelectedMoviesCard selectedMovie={selectedMovie} trailer={trailer} />
+    <div className="selected-movie-grid">
+      {selectedMovie && trailer ? (
+        <SelectedMoviesCard selectedMovie={selectedMovie} trailer={trailer} />
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   )
 }
 
 export default SelectedMoviesContainer
+
 
 SelectedMoviesContainer.propTypes = {
   selectedMovie: PropTypes.shape({
