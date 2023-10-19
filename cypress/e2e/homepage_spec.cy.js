@@ -25,5 +25,11 @@ describe('user should be able to visit the homepage', () => {
     cy.get('p').contains('404 Not Found')
   })
 
-
+  it('should give an error message for a 500 status code',() => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 502,
+      body: ''
+    })
+    cy.get('p').contains('502 Bad Gateway')
+  })
 })
