@@ -21,7 +21,7 @@ const SelectedMoviesContainer = () => {
       if (foundTrailer) {
         setTrailer(foundTrailer)
       } else {
-        setTrailer('NO TRAILER FOUND')
+        setTrailer('NO TRAILER IS CURRENTLY AVAILABLE')
       }
     })
     .catch(error => console.error(error))

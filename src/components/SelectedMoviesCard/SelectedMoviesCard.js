@@ -21,7 +21,7 @@ const SelectedMoviesCard = ({ selectedMovie, trailer }) => {
         <div className='sel-movie-title-section'>
           <h2 className='sel-movie-title'>{selectedMovie.title}</h2>
           <p className='sel-movie-overview'>{selectedMovie.overview}</p>
-          {trailer.key && 
+          {!trailer.key ? <p className="sel-movie-trailer">{trailer}</p> :
           <iframe className='sel-movie-trailer' src={trailerUrl}></iframe>} 
         </div>
         <div className='sel-movie-details'>
