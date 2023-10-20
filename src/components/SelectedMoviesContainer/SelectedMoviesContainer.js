@@ -11,15 +11,19 @@ const SelectedMoviesContainer = () => {
   const [trailer, setTrailer] = useState(null)
   const [selMovieError, setSelMovieError] = useState('')
   const { id } = useParams()
-  
+
+  const findTrailer = (data) => {
+    return data.find((video) => { return video.type === 'Trailer' })
+  }
+
   useEffect(() => {
     getSingleMovie(id)
     .then(data => setSelectedMovie(data.movie))
     .catch(error => setSelMovieError(error.message))
-  
+
     getMovieTrailer(id)
     .then(data => {
-      const foundTrailer = data.videos.find((video) => { return video.type === 'Trailer' });
+      const foundTrailer = findTrailer(data.videos)
       if (foundTrailer) {
         setTrailer(foundTrailer)
       } else {

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import './MoviesContainer.css'
 import { Link } from 'react-router-dom'
 
-const MoviesContainer = (props) => {
-  console.log(props.movies)
+const MoviesContainer = ({ movies }) => {
+  console.log(movies)
   
-  const moviesCards = props.movies.map((movie)=> {
+  const moviesCards = movies.map((movie)=> {
     return (
       <Link to={`/movies/${movie.id}`}   key={movie.id}>
         <MoviesCard 
@@ -36,5 +36,4 @@ MoviesContainer.propTypes= {
     release_date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
   })),
-  onMovieCardClick: PropTypes.func
 }
