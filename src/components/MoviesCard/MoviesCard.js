@@ -2,15 +2,15 @@ import PropTypes from 'prop-types'
 import './MoviesCard.css'
 
 
-const MoviesCard = (props) => {
+const MoviesCard = ({ title, rating, poster}) => {
   return (
     <div className="movies-card">
       <div className='card-bars'>
-        <h4>{props.title}</h4>
+        <h4>{title}</h4>
       </div>
-      <img className="movies-poster-img" src={props.poster}></img>
+      <img className="movies-poster-img" src={poster}></img>
       <div className='card-bars'>
-        <p>Rating: {props.rating.toFixed(1)}</p>
+        <p>Rating: {rating.toFixed(1)}</p>
       </div>
     </div>
   )
