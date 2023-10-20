@@ -35,7 +35,7 @@ const App = () => {
       {error && <p> {error} </p>}
       <Routes>
         <Route path="/" element={<MoviesContainer movies={movies}/>}/>
-        <Route path="/movies/:id" element={<SelectedMoviesContainer/>}/>  
+        <Route path="/movies/:id" element={<SelectedMoviesContainer/>}/>
       </Routes>
     </div> 
   )
