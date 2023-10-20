@@ -13,7 +13,7 @@ const App = () => {
 
   
   const getAllMovies = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movie')
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => {
       console.log(response)
       if (!response.ok) {
