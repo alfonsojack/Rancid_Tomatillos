@@ -1,0 +1,34 @@
+.error-cont {
+  background-color: #2B3238;
+  color: #e9ecee;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-h2 {
+  margin: 30px;
+  font-size: 48px;
+  transition: transform 0.3s;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.error-h2:hover {
+  cursor: pointer;
+  animation: spin 1s linear infinite;
+}
+
+.error-h3 {
+  margin: 30px;
+  width: 50vw;
+}

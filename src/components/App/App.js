@@ -5,7 +5,7 @@ import Header from '../Header/Header'
 import SelectedMoviesContainer from '../SelectedMoviesContainer/SelectedMoviesContainer'
 import './App.css'
 import { Routes, Route, Link, useParams } from 'react-router-dom'
-
+import ErrorComponent from '../ErrorComponent/ErrorComponent'
 
 const App = () => {
   const [movies, setMovies] = useState([])
@@ -13,7 +13,7 @@ const App = () => {
 
   
   const getAllMovies = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movie')
     .then(response => {
       console.log(response)
       if (!response.ok) {
@@ -29,14 +29,22 @@ const App = () => {
     getAllMovies()
   }, [])
 
+  console.log('App error: ', error)
   return ( 
     <div className='App'>
       <Header/>
-      {error && <p> {error} </p>}
+      {error ? (
+        <div className="app-error-cont">
+          <ErrorComponent error={error} message="We're experiencing server issues.  Please try again later."/>
+        </div>
+      ) : (
+
       <Routes>
         <Route path="/" element={<MoviesContainer movies={movies}/>}/>
         <Route path="/movies/:id" element={<SelectedMoviesContainer/>}/>
+        <Route path='/*' element={<ErrorComponent error={error} message="The page you're looking for doesn't exist.  While you're here, take the ERROR for a spin and then click on the Rancid Tomatillos title to return home."/>}/>
       </Routes>
+      )}
     </div> 
   )
 }
