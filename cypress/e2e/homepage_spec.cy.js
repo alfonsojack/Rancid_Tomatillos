@@ -22,7 +22,7 @@ describe('user should be able to visit the homepage', () => {
       statusCode: 404,
       body: ''
     })
-    cy.get('p').contains('404 Not Found')
+    cy.get('.error-cont').contains('404 Not Found')
   })
 
   it('should give an error message for a 500 status code',() => {
@@ -30,6 +30,6 @@ describe('user should be able to visit the homepage', () => {
       statusCode: 502,
       body: ''
     })
-    cy.get('p').contains('502 Bad Gateway')
+    cy.get('.error-cont').contains('502 Bad Gateway')
   })
 })
