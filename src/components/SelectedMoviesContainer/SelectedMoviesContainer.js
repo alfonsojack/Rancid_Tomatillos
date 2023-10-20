@@ -8,12 +8,13 @@ import { getSingleMovie, getMovieTrailer } from '../../apiCalls'
 const SelectedMoviesContainer = () => {
   const [selectedMovie, setSelectedMovie] = useState(null)
   const [trailer, setTrailer] = useState(null)
+  const [selMovieError, setSelMovieError] = useState('')
   const { id } = useParams()
-
+  
   useEffect(() => {
     getSingleMovie(id)
     .then(data => setSelectedMovie(data.movie))
-    .catch(error => console.error(error)) 
+    .catch(error => setSelMovieError(error.message))
   
     getMovieTrailer(id)
     .then(data => {
@@ -29,10 +30,12 @@ const SelectedMoviesContainer = () => {
 
   return (
     <div className="selected-movie-grid">
-      {selectedMovie && trailer ? (
-        <SelectedMoviesCard selectedMovie={selectedMovie} trailer={trailer} />
-      ) : (
+      {selMovieError ? (<p>{selMovieError}</p>) :
+      !selectedMovie || !trailer ? (
         <p>Loading...</p>
+      ) : (
+      <SelectedMoviesCard selectedMovie={selectedMovie} trailer={trailer} />
+        
       )}
     </div>
   )
