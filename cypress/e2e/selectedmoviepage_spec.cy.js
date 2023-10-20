@@ -32,7 +32,7 @@ describe('selectedMoviePage', () => {
     })
     cy.get('.movies-card').eq(1).click()
     cy.url().should('eq', 'http://localhost:3000/movies/1013860')
-    cy.get('p').should('contain', '404 Not Found')
+    cy.get('.error-cont').should('contain', '404 Not Found')
     cy.get('h1').click()
     cy.url().should('eq', 'http://localhost:3000/')
     cy.get('h1').contains('Rancid Tomatillos')
