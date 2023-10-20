@@ -13,3 +13,16 @@ h1 {
   margin: 0;
   text-align: center;
 }
+
+@media  screen and (max-width: 500px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media  screen and (max-width: 400px) {
+  h1 {
+    font-size: 32px;
+  }
+}
+  
