@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import './SelectedMoviesContainer.css'
 import { useParams } from 'react-router-dom'
 import { getSingleMovie, getMovieTrailer } from '../../apiCalls'
+import ErrorComponent from '../ErrorComponent/ErrorComponent'
 
 const SelectedMoviesContainer = () => {
   const [selectedMovie, setSelectedMovie] = useState(null)
@@ -30,7 +31,7 @@ const SelectedMoviesContainer = () => {
 
   return (
     <div className="selected-movie-grid">
-      {selMovieError ? (<p>{selMovieError}</p>) :
+      {selMovieError ? (<ErrorComponent error={selMovieError} message="The page you're looking for doesn't exist.  While you're here, take the ERROR for a spin and then click on the Rancid Tomatillos title to return home."/>) :
       !selectedMovie || !trailer ? (
         <p>Loading...</p>
       ) : (
