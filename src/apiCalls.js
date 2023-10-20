@@ -7,8 +7,6 @@ export const getSingleMovie = (movieId) => {
     }
     return response.json()
   })
-  // .then(data => setSelectedMovie(data.movie))
-  // .catch(error => console.error(error)) // Log the error
 }
 
 export const getMovieTrailer = (movieId) => {
@@ -19,13 +17,4 @@ export const getMovieTrailer = (movieId) => {
     }
     return response.json()
   })
-  // .then(data => {
-  //   const foundTrailer = data.videos.find((video) => { return video.type === 'Trailer' });
-  //   if (foundTrailer) {
-  //     setTrailer(foundTrailer)
-  //   } else {
-  //     setTrailer('NO TRAILER FOUND')
-  //   }
-  // })
-  // .catch(error => console.error(error)) // Log the error
 }
