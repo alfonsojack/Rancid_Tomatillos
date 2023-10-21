@@ -19,6 +19,9 @@ http://localhost:3000
 
 ## Preview of App: 
 
+- Homepage:
+- <img width="1440" alt="Screenshot 2023-10-21 at 3 04 40 PM" src="https://github.com/alfonsojack/Rancid_Tomatillos/assets/136117363/88c6fd99-3a79-448d-8f83-d3fe68ecd858">
+
 ## Context:
 
 Turing School of Software and Design is a 7 month, 4 module program. This project was assigned as part of module 3 of the front end curriculum. 
