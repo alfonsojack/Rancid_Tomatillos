@@ -2,8 +2,7 @@ import './ErrorComponent.css'
 import PropTypes from 'prop-types'
 
 const ErrorComponent = ({error, message}) => {
-  console.log('Error error: ', error)
-  console.log('message console', message)
+  
   return (
     <div className='error-cont'>
       <h2 className='error-h2'>ERROR</h2>

@@ -1,24 +1,22 @@
 import { useState, useEffect } from 'react'
-import movieData from '../../movieData'
 import MoviesContainer from '../MoviesContainer/MoviesContainer'
 import Header from '../Header/Header'
 import SelectedMoviesContainer from '../SelectedMoviesContainer/SelectedMoviesContainer'
 import './App.css'
-import { Routes, Route, Link, useParams } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import ErrorComponent from '../ErrorComponent/ErrorComponent'
 
 const App = () => {
   const [movies, setMovies] = useState([])
   const [error, setError] = useState('')
 
-  
   const getAllMovies = () => {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => {
-      console.log(response)
       if (!response.ok) {
         throw new Error(`${response.status} ${response.statusText}`)
       }
+      
       return response.json()
     })
     .then(data => setMovies(data.movies))
@@ -29,7 +27,6 @@ const App = () => {
     getAllMovies()
   }, [])
 
-  console.log('App error: ', error)
   return ( 
     <div className='App'>
       <Header/>

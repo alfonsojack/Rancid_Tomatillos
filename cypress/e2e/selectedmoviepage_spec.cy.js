@@ -10,8 +10,8 @@ describe('selectedMoviePage', () => {
       fixture: "mockTrailerData"
     }).as('trailer')
   })
+
   it('should take us to the selected movies page with that movie\s details', () => {
-    
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/1013860', {
       statusCode: 200,
       fixture: "mockSelectedMovieData"

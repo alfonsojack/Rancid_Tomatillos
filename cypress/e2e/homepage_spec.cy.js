@@ -2,6 +2,7 @@ describe('user should be able to visit the homepage', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
   })
+  
   it('homepage should have a title and 3 movies', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 200,

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import './MoviesCard.css'
 
-
 const MoviesCard = ({ title, rating, poster}) => {
   const cardAltText = `${title} movie image`
 

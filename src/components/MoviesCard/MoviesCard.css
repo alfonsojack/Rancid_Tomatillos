@@ -1,21 +1,16 @@
-
 .movies-card {
   font-size: .95em;
   font-style: kubik;
-  /* border: 2px solid ; */
-  /* padding: 10px; */
   box-shadow: 0 0 5px #1A1E22,
   0 0 10px #1A1E22,
   0 0 15px #1A1E22,
   0 0 20px #1A1E22;
-;
   width: 100%;
   height: 100%;
 }
 
 .movies-card:hover {
   cursor: pointer;
-  /* border: 2px solid #e9e9e9 */
   transition-duration: .2s;
   transform: scale(1.025);
   box-shadow: 0 0 5px #e9ecee,
@@ -34,9 +29,7 @@
 }
 
 .movies-poster-img {
-  /* border: 2px solid black; */
   width: 100%;
-  /* height: 100%; */
   box-shadow: none;
 }
 
