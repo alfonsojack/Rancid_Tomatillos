@@ -4,9 +4,9 @@ import './MoviesContainer.css'
 import { Link } from 'react-router-dom'
 
 const MoviesContainer = ({ movies }) => {
-  console.log(movies)
   
   const moviesCards = movies.map((movie)=> {
+    
     return (
       <Link to={`/movies/${movie.id}`}   key={movie.id}>
         <MoviesCard 
@@ -18,6 +18,7 @@ const MoviesContainer = ({ movies }) => {
       </Link>
     )
   })
+
   return (
     <div className="movie-grid">      
       {moviesCards}
@@ -35,5 +36,5 @@ MoviesContainer.propTypes= {
     poster_path: PropTypes.string.isRequired,
     release_date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
-  })),
+  }))
 }

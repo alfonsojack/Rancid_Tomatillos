@@ -1,4 +1,3 @@
-
 export const getSingleMovie = (movieId) => {
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
   .then(response => {

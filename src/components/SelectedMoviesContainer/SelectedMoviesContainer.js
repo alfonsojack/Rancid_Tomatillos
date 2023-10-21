@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import SelectedMoviesCard from '../SelectedMoviesCard/SelectedMoviesCard'
 import PropTypes from 'prop-types'
-import './SelectedMoviesContainer.css'
 import { useParams } from 'react-router-dom'
 import { getSingleMovie, getMovieTrailer } from '../../apiCalls'
 import ErrorComponent from '../ErrorComponent/ErrorComponent'
@@ -13,6 +12,7 @@ const SelectedMoviesContainer = () => {
   const { id } = useParams()
 
   const findTrailer = (data) => {
+
     return data.find((video) => { return video.type === 'Trailer' })
   }
 
@@ -31,7 +31,7 @@ const SelectedMoviesContainer = () => {
       }
     })
     .catch(error => console.error(error))
-  }, [id]);
+  }, [id])
 
   return (
     <div className="selected-movie-grid">
@@ -40,14 +40,12 @@ const SelectedMoviesContainer = () => {
         <p>Loading...</p>
       ) : (
       <SelectedMoviesCard selectedMovie={selectedMovie} trailer={trailer} />
-        
       )}
     </div>
   )
 }
 
 export default SelectedMoviesContainer
-
 
 SelectedMoviesContainer.propTypes = {
   selectedMovie: PropTypes.shape({
