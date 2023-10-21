@@ -4,7 +4,7 @@ The purpose of this project was to make an application that could take movie dat
 
 ## Application link:
 
-[Rancid Tomatillos]((https://rancid-tomatillos-mu.vercel.app/))
+[Rancid Tomatillos](https://rancid-tomatillos-mu.vercel.app/)
 
 ## Installation Instructions:
 
