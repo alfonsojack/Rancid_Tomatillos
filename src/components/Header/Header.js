@@ -12,7 +12,7 @@ const Header = () => {
       </Link>
       {location.pathname !== "/" &&
       <Link to="/">
-        <h3>Home</h3>
+        <h3 className='home-button'>Home</h3>
       </Link>
       }
         

@@ -18,6 +18,19 @@ describe('user should be able to visit the homepage', () => {
     cy.get('.movies-poster-img').eq(3).should('have.attr', 'src', "https://image.tmdb.org/t/p/original//4BgSWFMW2MJ0dT5metLzsRWO7IJ.jpg")
   })
 
+  it('should sort movies by rating in descending order on button click and then go back to original order on subsequent click', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 200,
+      fixture: "mockMovieData"
+    })
+    cy.get('button').click()
+    cy.get('.card-bars').first().should('contain', "Cats & Dogs 3: Paws Unite")
+    cy.get('.card-bars').last().should('contain', "Rating: 5.4")
+    cy.get('button').click()
+    cy.get('.card-bars').first().should('contain', 'Money Plane')
+    cy.get('.card-bars').last().should('contain', "Rating: 7.4")
+  })
+
   it('should give an error message for a 404 status code', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 404,
