@@ -1,3 +1,30 @@
+button {
+  margin-top: 30px;
+  font-family: rubik;
+  font-size: .9em;
+  background-color: #2B3238;
+  color: #e9ecee;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: none;
+  box-shadow: 0 0 2px #1A1E22,
+              0 0 5px #1A1E22,
+              0 0 7px #1A1E22,
+              0 0 10px #1A1E22;
+}
+
+button:hover {
+  cursor: pointer;
+  /* background-color: #1A1E22; */
+  transition-duration: .2s;
+  transform: scale(1.025);
+  box-shadow: 0 0 2px #e9ecee,
+              0 0 5px #e9ecee,
+              0 0 7px #e9ecee,
+              0 0 10px #e9ecee;
+}
+
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

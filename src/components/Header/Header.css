@@ -1,6 +1,6 @@
 .header-cont {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #1A1E22;
   height: 15vh;
@@ -12,16 +12,4 @@ h1 {
   color: #e9ecee;
   margin: 0;
   text-align: center;
-}
-
-@media  screen and (max-width: 500px) {
-  h1 {
-    font-size: 48px;
-  }
-}
-
-@media  screen and (max-width: 400px) {
-  h1 {
-    font-size: 32px;
-  }
 }
