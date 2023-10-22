@@ -23,6 +23,10 @@ describe('selectedMoviePage', () => {
     cy.get('.sel-movie-title').should('contain', 'R.I.P.D. 2: Rise of the Damned')
     cy.get('.sel-movie-trailer').should('have.length', 1)
     cy.get('.movie-det-line').first().should('contain', '7 / 10')
+    cy.get('.home-button').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+    cy.get('h1').contains('Rancid Tomatillos')
+    cy.get('.movie-grid').find('.movies-card').should('have.length', 4)
   })
 
   it('should show an error message if selected movie can\t be found', () => {
