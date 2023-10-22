@@ -4,19 +4,16 @@ import { Link, useLocation } from 'react-router-dom'
 const Header = () => {
   const location = useLocation()
 
-  console.log('location: ', location)
   return (
     <div className='header-cont'>
       <Link to="/">
-      <h1>Rancid Tomatillos</h1>
+        <h1>Rancid Tomatillos</h1>
       </Link>
       {location.pathname !== "/" &&
       <Link to="/">
         <h3 className='home-button'>Home</h3>
       </Link>
       }
-        
-
     </div>
   )
 }
