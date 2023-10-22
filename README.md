@@ -19,9 +19,10 @@ http://localhost:3000
 
 ## Preview of App: 
 
-- Homepage: <img width="1440" alt="Screenshot 2023-10-21 at 3 04 40 PM" src="https://github.com/alfonsojack/Rancid_Tomatillos/assets/136117363/88c6fd99-3a79-448d-8f83-d3fe68ecd858">
-- Movie Details Page: <img width="1440" alt="Screenshot 2023-10-21 at 3 05 54 PM" src="https://github.com/alfonsojack/Rancid_Tomatillos/assets/136117363/6348ef2d-4b62-483e-b0fe-573214a8e603">
-- Error Page: <img width="1440" alt="Screenshot 2023-10-21 at 3 06 45 PM" src="https://github.com/alfonsojack/Rancid_Tomatillos/assets/136117363/fff71905-f1f1-48fb-919d-df5659fa2948">
+- Homepage: 
+- Homepage Sorted: 
+- Movie Details Page: 
+- Error Page: 
 
 ## Context:
 
