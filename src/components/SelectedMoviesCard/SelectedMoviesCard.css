@@ -16,6 +16,7 @@
 
 .sel-movie-detail-section {
   display: flex;
+  justify-content: center;
 }
 
 .sel-movie-details {
@@ -105,7 +106,8 @@
 
 @media screen and (max-width: 925px) {
   .sel-movie-poster-img {
-    height: 200px;
+    height: 260px;
+    /* width: 150px; */
   }
 
   .sel-movie-trailer {
@@ -130,6 +132,14 @@
  }
 
  @media screen and (max-width: 825px) {
+  .header-cont {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
   .sel-movie-title-section {
     padding-top: 0px;
   }
@@ -152,6 +162,7 @@
   .sel-movie-detail-section {
     flex-direction: column;
     align-items: center;
+    justify-content: start;
     height: 60vh;
     width: 80vw;
     overflow: auto;
@@ -172,9 +183,14 @@
 }
 
 @media screen and (max-width: 550px) {
-  .sel-movie-detail-section {
-    height: 85vh;
+  h1 {
+    font-size: 36px;
   }
+
+  .sel-movie-detail-section {
+    height: 90vh;
+  }
+
   .sel-movie-tagline {
     font-size: 24px;
   }
@@ -195,7 +211,7 @@
 
 @media screen and (max-width: 393px) {
   h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .sel-movie-card{
@@ -225,6 +241,6 @@
   }
 
   .sel-movie-details {
-    margin-top: 420px;
+    margin-top: 300px;
   }
 }
