@@ -10,7 +10,7 @@
 
 # Abstract
 
-The purpose of this project was to make an application that could take movie data from a server and display that data in clickable cards to a user so that they can get more information on the movie. When on the singular movie page the user can navigate back to the home view of all movies and click to get information on different movies.
+The purpose of this project was to make an application that could take movie data from a server and display that data in clickable cards that a user can use to get more information on the selected movie. When on the singular movie page the user can navigate back to the home view of all movies and click to get information on different movies.
 
 ## Context:
 
